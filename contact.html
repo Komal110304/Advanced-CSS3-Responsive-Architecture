@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact Komal Pandey | Front-End Developer</title>
+<meta name="description" content="Send Komal Pandey a message about a project, a job opportunity or a collaboration.">
+<meta name="author" content="Komal Pandey">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0b6e69">
+<link rel="canonical" href="https://www.example.com/contact.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Contact Komal Pandey | Front-End Developer">
+<meta property="og:description" content="Send Komal Pandey a message about a project, a job opportunity or a collaboration.">
+<meta property="og:url" content="https://www.example.com/contact.html">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%276%27 fill=%27%230b6e69%27/%3E%3Ctext x=%2716%27 y=%2723%27 font-size=%2720%27 text-anchor=%27middle%27 fill=%27white%27 font-family=%27Georgia%27%3EK%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+<script src="theme.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header"><div class="wrap"><a class="brand" href="index.html" aria-label="Komal Pandey, home">Komal Pandey</a><nav aria-label="Main"><ul class="nav-list"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="projects.html">Projects</a></li><li><a href="contact.html" aria-current="page">Contact</a></li></ul></nav><button class="theme-toggle" type="button" aria-pressed="false"><span aria-hidden="true">◐</span><span>Dark mode</span></button></div></header>
+<main id="main" tabindex="-1">
+<div class="wrap">
+<h1>Contact me</h1>
+<p class="lead">Tell me about your project. I reply within two working days.</p>
+<div class="contact-layout">
+<form id="contact-form" action="#" method="post" novalidate aria-describedby="form-help">
+<p id="form-help" class="hint">Fields marked required must be filled in.</p>
+<fieldset><legend>Your details</legend>
+<div><label for="name">Full name (required)</label><input id="name" name="name" type="text" autocomplete="name" required aria-describedby="name-err"><p id="name-err" class="error" hidden></p></div>
+<div><label for="email">Email address (required)</label><input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-hint email-err"><p id="email-hint" class="hint">For example, name@example.com</p><p id="email-err" class="error" hidden></p></div>
+</fieldset>
+<fieldset><legend>Your message</legend>
+<div><label for="topic">Topic</label><select id="topic" name="topic"><option>Project enquiry</option><option>Job opportunity</option><option>Other</option></select></div>
+<div><label for="message">Message (required)</label><textarea id="message" name="message" rows="6" required aria-describedby="msg-err"></textarea><p id="msg-err" class="error" hidden></p></div>
+</fieldset>
+<div><button class="btn" type="submit">Send message</button></div>
+<div id="status" class="status" role="status" aria-live="polite" tabindex="-1"></div>
+</form>
+<aside class="contact-info" aria-labelledby="info-title"><h2 id="info-title">Other ways to reach me</h2><ul class="info-list"><li><strong>Email</strong><a href="mailto:pandeykomal7276@gmail.com">pandeykomal7276@gmail.com</a></li><li><strong>Location</strong><span>Remote, worldwide</span></li><li><strong>Replies</strong><span>Within two working days</span></li></ul></aside>
+</div>
+</div>
+</main>
+<footer class="site-footer"><div class="wrap"><p>&copy; 2026 Komal Pandey. Built with semantic HTML.</p><nav aria-label="Footer"><a href="mailto:pandeykomal7276@gmail.com">pandeykomal7276@gmail.com</a></nav></div></footer>
+<script>
+(function(){
+var f=document.getElementById("contact-form"),s=document.getElementById("status");
+var rules=[["name","name-err","Enter your full name."],["email","email-err","Enter a valid email address, like name@example.com."],["message","msg-err","Enter a message."]];
+f.addEventListener("submit",function(e){
+e.preventDefault();s.textContent="";var first=null;
+rules.forEach(function(r){var i=document.getElementById(r[0]),m=document.getElementById(r[1]);
+var bad=!i.value.trim()||(i.type==="email"&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(i.value));
+i.setAttribute("aria-invalid",bad);m.hidden=!bad;m.textContent=bad?r[2]:"";
+if(bad&&!first)first=i;});
+if(first){first.focus();s.textContent="Message not sent. Fix the errors above and try again.";return;}
+/* Connect this to your form service here (e.g. fetch to your endpoint). */
+s.textContent="Thanks, your message is ready to send. Connect the form to a backend to deliver it.";
+s.focus();f.reset();
+});
+})();
+</script>
+</body>
+</html>
